@@ -24,33 +24,3 @@ random.group <- function(data , size){
     }
   }
 }
-
-##################################################
-##################################################
-### Example 1 ###
-data <- seq(from = 1 , to = 30)
-size <- 7
-groups <- random.group(data = data , size = size)
-print(groups)
-
-### Example 2 ###
-data <- seq(from = 1 , to = 30)
-size <- 6
-groups <- random.group(data = data , size = size)
-print(groups)
-
-### Example 3 ###
-n.objects <- 21
-roster <- data.frame(cbind(paste0("FirstName", 1:n.objects),
-                           paste0("LastName", 1:n.objects)))
-
-data <- seq(from = 1 , to = dim(roster)[1] , by = 1)
-size <- 6
-
-groups <- random.group(data = data , size = size)
-
-for (i in 1:dim(groups[[1]])[1]){
-  print(roster[(groups[[1]][i,]),])
-}
-
-print(roster[(groups[[2]]),])
